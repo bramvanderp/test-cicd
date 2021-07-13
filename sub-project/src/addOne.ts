@@ -1,0 +1,1 @@
+export const addOne = (to: number): number => to + 1

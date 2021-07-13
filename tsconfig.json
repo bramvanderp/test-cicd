@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "lib": ["es2018", "dom"],
+    "strict": true,
+    "typeRoots": ["./src/modules", "./node_modules/@types"],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitThis": false,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["./sub-project"]
+}
