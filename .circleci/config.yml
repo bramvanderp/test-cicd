@@ -9,10 +9,9 @@ jobs:
     steps:
       - checkout
       - node/with-cache:
-          working_directory: ./sub-project
           steps:
-            - run: npm install
-            - run: npm run test
+            - run: cd sub-project && npm install
+      - run: cd sub-project && npm run test
 
 workflows:
   sub-project:
