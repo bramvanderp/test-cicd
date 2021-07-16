@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1
 jobs:
-  sub-project/test:
+  sub-project-test:
     executor:
       name: node/default
       tag: '10.4'
@@ -17,4 +17,4 @@ jobs:
 workflows:
   sub-project:
     jobs:
-      - sub-project/test
+      - sub-project-test
