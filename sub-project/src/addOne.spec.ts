@@ -7,5 +7,5 @@ describe('addOne', () => {
         const result = addOne(1);
 
         expect(result).toEqual(2);
-    })
-})
+    });
+});

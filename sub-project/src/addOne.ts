@@ -1,1 +1,1 @@
-export const addOne = (to: number): number => to + 1
+export const addOne = (to: number): number => to + 1;
