@@ -3,16 +3,17 @@ orbs:
   node: circleci/node@1.1
 jobs:
   sub-project-test:
-    working_directory: ./sub-project
     executor:
       name: node/default
       tag: '10.4'
     steps:
       - checkout
       - node/with-cache:
+          working_directory: ./sub-project
           steps:
             - run: npm install
       - run: npm run test
+          working_directory: ./sub-project
 
 workflows:
   sub-project:
