@@ -12,8 +12,7 @@ jobs:
           working_directory: ./sub-project
           steps:
             - run: npm install
-      - run: npm run test
-          working_directory: ./sub-project
+            - run: npm run test
 
 workflows:
   sub-project:
