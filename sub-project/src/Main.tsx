@@ -6,5 +6,5 @@ export interface Props {
 
 export const Main: React.FC<Props> = ({name}) => {
 
-    return (<div>{name} - henk - karel</div>);
+    return (<div>{name} - henk - hans</div>);
 }
