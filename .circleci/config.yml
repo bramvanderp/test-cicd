@@ -26,7 +26,7 @@ jobs:
 workflows:
   sub-project:
     jobs:
-      - sub-project-test:
+      - sub-project-test
       - manual-approve:
           type: approval
           requires:
@@ -37,4 +37,4 @@ workflows:
               - main
       - build:
           requires:
-            - manual-approval
+            - manual-approve
