@@ -13,7 +13,7 @@ export class App
 
     private render(): void
     {
-        ReactDOM.render(React.createElement(Main, { name: 'joop' }), document.getElementById("app"));
+        ReactDOM.render(React.createElement(Main, { name: 'fred' }), document.getElementById("app"));
     }
 
     public get appName(): string { return this._appName; }
