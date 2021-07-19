@@ -15,3 +15,11 @@ jobs:
         cd sub-project
         npm install
         npm test
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test_sub_project
+    environment:
+      name: Production
+      url: bramvanderputten.com
+    steps:
+      - uses:actions/checkout@v2
