@@ -17,7 +17,7 @@ workflows:
   sub-project:
     jobs:
       - sub-project-test:
-          filters:
-            branches:
-              only:
-                - main
+        filters:
+          branches:
+            only:
+              - main
