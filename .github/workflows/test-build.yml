@@ -1,0 +1,19 @@
+name: Test build
+on:
+  push:
+    branches:
+      - test-build
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          working-directory: cypress
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.cypress }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
