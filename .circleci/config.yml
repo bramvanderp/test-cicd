@@ -20,8 +20,9 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
+            - run: npm install
             - run: cd sub-project && npm install
-      - run: cd sub-project && npm run build
+      - run: npm install && cd sub-project && npm run build
 
 workflows:
   sub-project:
