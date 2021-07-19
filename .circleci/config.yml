@@ -32,9 +32,9 @@ workflows:
           requires:
             - sub-project-test
           filters:
-          branches:
-            only:
-              - main
+            branches:
+              only:
+                - main
       - build:
           requires:
             - manual-approve
