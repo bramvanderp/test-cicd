@@ -22,3 +22,7 @@ workflows:
             branches:
               only:
                 - main
+      - manual-approve:
+          type: approval
+          requires:
+            - sub-project-test
