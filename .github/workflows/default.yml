@@ -1,18 +1,16 @@
-name: Manually triggered workflow
+name: Test sub-project
 on:
   push:
     branches:
       - main
 jobs:
-  say_hello:
-    runs-on: ubuntu-latest
-    steps:
-    - run: |
-        echo "Hello ${{ github.event.inputs.name }}!"
-        echo "- in ${{ github.event.inputs.home }}!"
   test_sub_project:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 10
     - run: |
         cd sub-project
         npm install
