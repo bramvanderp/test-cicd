@@ -1,22 +1,8 @@
 name: Manually triggered workflow
 on:
   push:
-    input:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Arie'
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
-
+    branches:
+      - main
 jobs:
   say_hello:
     runs-on: ubuntu-latest
@@ -24,3 +10,10 @@ jobs:
     - run: |
         echo "Hello ${{ github.event.inputs.name }}!"
         echo "- in ${{ github.event.inputs.home }}!"
+  test_sub_project:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        cd sub-project
+        npm install
+        npm test
