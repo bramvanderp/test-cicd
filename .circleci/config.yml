@@ -14,10 +14,11 @@ jobs:
       - run: cd sub-project && npm run test
 
 workflows:
+  version: 2
   sub-project:
     jobs:
       - sub-project-test:
-        filters:
-          branches:
-            only:
-              - main
+          filters:
+            branches:
+              only:
+                - main
