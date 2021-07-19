@@ -12,17 +12,30 @@ jobs:
           steps:
             - run: cd sub-project && npm install
       - run: cd sub-project && npm run test
+  build:
+    executor:
+      name: node/default
+      tag: '14.16'
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: cd sub-project && npm install
+      - run: cd sub-project && npm run build
 
 workflows:
   version: 2
   sub-project:
     jobs:
       - sub-project-test:
-          filters:
-            branches:
-              only:
-                - main
       - manual-approve:
           type: approval
           requires:
             - sub-project-test
+          filters:
+          branches:
+            only:
+              - main
+      - build:
+          requires:
+            - manual-approval
