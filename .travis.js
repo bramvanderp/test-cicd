@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { testSubProject } = require("./pipeline");
+const { testSubProject } = require("./pipeline/sub-project");
 
 const pipeline = async () => {
     await testSubProject();
