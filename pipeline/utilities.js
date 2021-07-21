@@ -26,7 +26,7 @@ const run = (command, args, options) => {
 const containsChanges = async (directory, commits) => {
  const changedFiles = await run('git', ['diff', '--name-only', commits]);
  const onlyFilesInDirectory = changedFiles.filter(path => path.includes(directory));
- console.log('onlyFilesInDirectory', onlyFilesInDirectory);
+ console.log('onlyFilesInDirectory', onlyFilesInDirectory, onlyFilesInDirectory.length >= 1);
  return onlyFilesInDirectory.length >= 1;
 };
 
