@@ -8,11 +8,11 @@ const run = (command, args, options) => {
     const spawned = spawn(command, args, options);
     spawned.stdout.on('data', output => {
       console.log(output.toString())
-      output.push(data);
+      output.push(output.toString());
     });
     spawned.stderr.on('data', output => {
       console.error(output.toString());
-      output.push(data);
+      output.push(output.toString());
     });
     spawned.on('close', (code) => {
       if (code > 0) {
