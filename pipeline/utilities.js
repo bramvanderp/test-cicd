@@ -4,16 +4,21 @@ const fs = require('fs');
 const run = (command, args, options) => {
   console.debug(`${command} ${args.toString()}`);
   return new Promise(resolve => {
+    const output = [];
     const spawned = spawn(command, args, options);
-    spawned.stdout.on('data', output => console.log(output.toString()));
+    spawned.stdout.on('data', output => {
+      console.log(output.toString())
+      output.push(data);
+    });
     spawned.stderr.on('data', output => {
       console.error(output.toString());
+      output.push(data);
     });
     spawned.on('close', (code) => {
       if (code > 0) {
         process.exit(code);
       }
-      resolve();
+      resolve(output);
     });
   });
 };
