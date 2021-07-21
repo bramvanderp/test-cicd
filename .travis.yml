@@ -2,3 +2,8 @@ language: node_js
 node_js:
   - 14
 script: ./.travis.js
+
+matrix:
+  include:
+    - env: TARGET=.
+    - env: TARGET=sub-project
