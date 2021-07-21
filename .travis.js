@@ -1,2 +1,16 @@
 #!/usr/bin/env node
-console.log('Javascript script works');
+
+const { run } = require("./utilities");
+
+console.log('Starting build...');
+pipeline().then(() => console.log('Build finished.'));
+
+const pipeline = async () => {
+    await testSubProject();
+}
+
+const testSubProject = async () => {
+    process.chdir('./sub-project')
+    await run('npm', ['ci']);
+    await run('npm', ['test']);
+}
